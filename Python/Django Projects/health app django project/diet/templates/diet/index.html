@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'health/index_style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <style>
+        body{
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 1%;
+        }
+
+        header{
+            background-color: #5ead5f;
+            padding: 2%;
+        }
+        .centered_text{
+            text-align: center;
+        }
+
+        .group_labels{
+            text-decoration: underline;
+        }
+
+        .group{
+            border: 2px solid black;
+            width: 40%;
+            text-align: center;
+            margin: 1%;
+        }
+
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .section_header{
+            background-color: #9fd49f;
+             padding: 2%;
+        }
+
+        .todays_overview h3, h5{
+            color: forestgreen;
+        }
+
+        .right_align{
+            text-align: right;
+        }
+
+        .table_container{
+           width: 67%;
+            height: 300px;
+            overflow: scroll;
+            padding: 2%;
+        }
+
+        .total_cals_display{
+            color: forestgreen;
+            {#border: 3px solid black;#}
+            padding: 3%;
+            width: 22%;
+            text-align: center;
+            font-size: 50px;
+        }
+        nav{
+            height: 40px;
+            margin-bottom: 8px;
+        }
+
+    </style>
+
+    <script>
+        // takes the date from the selection in the form and stores it to the date input in the hidden forms
+        function setGroupDateFields() {
+            selectedDate = document.getElementById("dateField").value;
+            document.getElementById("groupDateField1").value = selectedDate;
+            document.getElementById("groupDateField2").value = selectedDate;
+            document.getElementById("groupDateField3").value = selectedDate;
+            document.getElementById("groupDateField4").value = selectedDate;
+            document.getElementById("groupDateField5").value = selectedDate;
+            document.getElementById("groupDateField6").value = selectedDate;
+            document.getElementById("groupDateField7").value = selectedDate;
+        }
+        // what is displayed if there is no data for today
+        function ifNoEntriesToday() {
+            if({{ todaysTotalCals }} == 0){
+                document.getElementById("pie_chart_display").innerHTML = "";
+                document.getElementById("table_container").innerHTML = "Enter food eaten today below to see an overview of your consumption for today";
+            }
+        }
+
+    </script>
+</head>
+
+<body onload="ifNoEntriesToday()">
+
+{# Nav bar#}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="http://localhost:8000/health">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All Applications
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="http://localhost:8000/diet">Calorie Tracker</a>
+            <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="http://localhost:8000/exercise">Work out Planner</a>
+            <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Meal Planner</a>
+            <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Virtual Doctor</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{# Header #}
+<header>
+    <h1 class="centered_text"> Calorie Tracker </h1>
+</header>
+<hr>
+
+{# Todays overview #}
+<div class="todays_overview">
+    <h3 style="text-decoration: underline" > Today:</h3>
+
+    <div class="container">
+        <div  id="total_cals_display" class="total_cals_display">
+            {{ todaysTotalCals }} <br> Calories
+        </div>
+
+        <div id="table_container" class="table_container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Food </th>
+                        <th>Calories </th>
+                        <th>Sugar(g) </th>
+                        <th>Fiber(g) </th>
+                        <th>Carbs(g) </th>
+                        <th>Fat(g) </th>
+                        <th>Protein(g) </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for each in todaysFoodsNutrFacts %}
+                        <tr>
+                                <td>{{ each.item }}</td>
+                                <td>{{ each.cals }}</td>
+                                <td>{{ each.sugar }}</td>
+                                <td>{{ each.fiber }}</td>
+                                <td>{{ each.carbs }}</td>
+                                <td>{{ each.fat }}</td>
+                                <td>{{ each.protein }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>  {# end flex container #}
+
+    <div id="pie_chart_display">
+        {% autoescape off %}
+          {{ plot_div }}
+          {% endautoescape %}
+    </div>
+</div> {# END todays overview SECTION#}
+
+{# Create a new entry #}
+<div class="entry_section">
+    <h3 class="centered_text section_header"> + Create Entry </h3> <br>
+
+{# Calender #}
+    <div class="centered_text">
+        Create entry for: <input class ="centered_text" type="date" id="dateField" name="dateField" value={{ currentDate }} onchange="setGroupDateFields()">
+    </div> <br>
+
+{# food groups #}
+    <div class="container">
+
+    {# Fruit   #}
+        <div class="group ">
+            <h5 class="group_labels"> FRUIT </h5>
+            <form action="/diet/" method="post">
+                {% csrf_token %}
+                <select name="fruit" id="fruit">
+                    {% for row in fruit %}
+                        <option value={{ row.item }}>{{ row.item }}</option>
+                    {% endfor %}
+                </select>
+              <br><br>
+            <div hidden>
+                <input type="date" id="groupDateField1" name="groupDateField1" value={{ currentDate }}>
+            </div>
+            <input type="submit" value="Submit">
+            </form>
+        </div>
+
+    {# Veggies #}
+        <div class="group ">
+            <h5 class="group_labels"> VEG </h5>
+                <form action="/diet/" method="post">
+                {% csrf_token %}
+                <select name="veg" id="veg">
+                    {% for row in veg %}
+                        <option value={{ row.item }}>{{ row.item }}</option>
+                    {% endfor %}
+                </select>
+              <br><br>
+            <div hidden>
+                <input type="date" id="groupDateField2" name="groupDateField2" value={{ currentDate }}>
+            </div>
+            <input type="submit" value="Submit">
+            </form>
+        </div>
+
+    {# Grain #}
+        <div class="group ">
+            <h5 class="group_labels"> GRAIN </h5>
+                <form action="/diet/" method="post">
+                {% csrf_token %}
+                <select name="grain" id="grain">
+                    {% for row in grain %}
+                        <option value={{ row.item }}>{{ row.item }}</option>
+                    {% endfor %}
+                </select>
+              <br><br>
+            <div hidden>
+                <input type="date" id="groupDateField3" name="groupDateField3" value={{ currentDate }} >
+            </div>
+            <input type="submit" value="Submit">
+            </form>
+        </div>
+
+    {# Dairy  #}
+        <div class="group ">
+            <h5 class="group_labels"> DAIRY </h5>
+                <form action="/diet/" method="post">
+                {% csrf_token %}
+                <select name="dairy" id="dairy">
+                    {% for row in dairy %}
+                        <option value={{ row.item }}>{{ row.item }}</option>
+                    {% endfor %}
+                </select>
+              <br><br>
+            <div hidden>
+                <input type="date" id="groupDateField4" name="groupDateField4" value={{ currentDate }}>
+            </div>
+            <input type="submit" value="Submit">
+            </form>
+        </div>
+
+    {# Protein  #}
+        <div class="group ">
+            <h5 class="group_labels"> PROTEIN </h5>
+                <form action="#" method="post">
+                {% csrf_token %}
+                <select name="protein" id="protein">
+                    {% for row in protein %}
+                        <option value={{ row.item }}>{{ row.item }}</option>
+                    {% endfor %}
+                </select>
+              <br><br>
+            <div hidden>
+                <input type="date" id="groupDateField5" name="groupDateField5" value={{ currentDate }}>
+            </div>
+            <input type="submit" value="Submit">
+            </form>
+        </div>
+
+    {# Junk food #}
+        <div class="group ">
+            <h5 class="group_labels"> JUNK FOOD  </h5>
+                <form action="/diet/" method="post">
+                {% csrf_token %}
+                <select name="junk" id="junk">
+                    {% for row in junk %}
+                        <option value={{ row.item }}>{{ row.item }}</option>
+                    {% endfor %}
+                </select>
+              <br><br>
+            <div hidden>
+                <input type="date" id="groupDateField6" name="groupDateField6" value={{ currentDate }}>
+            </div>
+            <input type="submit" value="Submit">
+            </form>
+        </div>
+
+    {# Other #}
+        <div class="group ">
+            <h5 class="group_labels"> MISC. </h5>
+                <form action="/diet/" method="post">
+                {% csrf_token %}
+                <select name="misc" id="misc">
+                    {% for row in misc %}
+                        <option value={{ row.item }}>{{ row.item }}</option>
+                    {% endfor %}
+                </select>
+              <br><br>
+            <div hidden>
+                <input type="date" id="groupDateField7" name="groupDateField7" value={{ currentDate }}>
+            </div>
+            <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div> {# END OF FOOD GROUP BOXES / FLEX CONTAINER#}
+</div>{# END ENTRY SECTION#}
+<hr>
+
+{# history #}
+<div class="history_section">
+<h3 class="centered_text section_header"> Daily Calorie Intake History:</h3>
+    {% autoescape off %}
+        {{ plot_div2 }}
+    {% endautoescape %}
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
