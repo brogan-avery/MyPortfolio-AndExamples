@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<title>View All Locations</title>
+</head>
+<body>
+
+<h3>View all Resort Locations</h3>
+<form>
+	<table class="table table-striped table-hover">
+		<th> 
+			<td> Location </td>
+			<td> Phone </td>
+			<td> Price </td>
+			<td> Pets </td>
+			<td> Excursion Activity</td>
+			<td> Activity length (hours) </td>
+			<td> Activity challenge level (1-5) </td>
+			
+		</th>
+		<tr th:each="currentLocation : ${locations}" >
+			<td th:text="${currentLocation.id}" />
+			<td th:text="${currentLocation.location}" /> 
+			<td th:text="${currentLocation.phone}" />
+			<td th:text="${#numbers.formatCurrency(currentLocation.price)}" /> 
+			<td>
+				<span th:if="${currentLocation.pets}">allowed</span>
+    			<span th:if="${not currentLocation.pets}">Not allowed</span>
+			</td>
+			<td th:text="${currentLocation.excursion.activity}" />
+			<td th:text="${currentLocation.excursion.hours}" /> 
+			<td th:text="${currentLocation.excursion.level}" /> 
+			<td><a th:href="@{/edit/{id}(id=${currentLocation.id})}">Edit</a></td>
+			<td><a th:href="@{/delete/{id}(id=${currentLocation.id})}">Delete</a></td>
+		</tr>
+		
+	</table>
+</form>
+<a href="../addLocation">Add a new location</a>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

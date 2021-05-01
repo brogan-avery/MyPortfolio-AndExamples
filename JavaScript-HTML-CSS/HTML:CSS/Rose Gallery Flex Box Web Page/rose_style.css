@@ -1,0 +1,62 @@
+body{
+  background-color: rgb(252, 230, 248);
+}
+
+h1{
+  text-align: center;
+}
+
+h3{
+  text-align: center;
+}
+
+figure{
+  border: 2px solid rgb(99, 20, 85);
+  border-radius: 20px;
+  background-color: rgb(242, 170, 195);
+   box-shadow: 5px 10px #888888;
+}
+
+figcaption  {
+	font-size: 0.7em;
+	font-style: italic;
+	margin-bottom: 9px;
+  text-align: center;
+		}
+
+.container{
+  background-color: rgb(224, 224, 197);
+  border: 2px solid tan;
+  box-shadow: 5px 10px #888888;
+  border-radius: 20px;
+}
+
+@media screen and (max-width:625px){
+
+  body{
+    background-color: rgb(201, 56, 61);
+  }
+
+h1{
+  background: #d4af37;
+}
+  figure{
+    border: 2px solid #d4af37;
+    background-color: #d4af37;
+    border-radius: initial;
+    box-shadow: initial;
+
+  }
+
+  figcaption  {
+  	font-size: 0.7em;
+  	font-style: italic;
+  	margin-bottom: 9px;
+    text-align: center;
+    background-color: rgb(252, 230, 248)
+  		}
+  .container{
+    all: initial;
+  }
+  
+}

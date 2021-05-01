@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript - Arrays</title>
+<script>
+var states = new Array();
+	states[0] = 'Iowa';
+	states[1] = 'Illinois';
+	states[2] = 'Missouri';
+	states[3] = 'Wisconsin';
+
+var tax_rate = new Array();
+	tax_rate[0] = '6%';
+	tax_rate[1] = '11%';
+	tax_rate[2] = '7%';
+	tax_rate[3] = '8%';
+
+function salesTaxLookup(){
+var option_value = document.getElementById("selectState").value
+	for (var i=0; i < 4; i++){
+			if (states[i] == option_value)
+			{
+		document.getElementById("displayTaxRate").innerHTML = tax_rate[i];
+		}
+	}
+}
+
+function form_reset(){
+ 		document.getElementById("displayTaxRate").innerHTML = " "
+}
+</script>
+<style>
+
+	form	{
+		border:thin solid gray;
+		width:400px;
+		background-color:#9FF;
+		margin-left:50px;
+	}
+
+	form p	{
+		padding-left:5px;
+	}
+
+
+</style>
+</head>
+
+<body>
+
+<h3>Lookup Tax Rate Form</h3>
+<p>This form will use arrays to load the values into the drop down list. It will allow the user to select a state from the dropdown list. Once it is selected the tax rate for that state will be dislayed on the form.</p>
+<form id="form1" name="form1" method="post" action="">
+  <p>Please select a state:
+    <select name="selectState" id="selectState" onchange="salesTaxLookup()">
+    	<script>
+			for (var i=0; i < 4; i++){
+			document.write('<option>' ,states[i] , '</option>')
+			}
+			</script>
+    </select>
+  </p>
+  <p>The Sales tax rate is: <span id="displayTaxRate"></span> </p>
+  <p>
+    <input type="reset" name="button2" id="button2" value="Reset" onclick="form_reset()"/>
+  </p>
+</form>
+<h3>Instructions:</h3>
+<ol>
+  <li>Create an array called states that lists the following states in this order: Iowa, Illinois, Missouri, Wisconsin</li>
+<script>
+//states array declared at top
+	document.write(states)
+</script>
+  <li>Create a parallel array called stateSalesTax that lists the following values in this order: 6%,11%,7%,8%. </li>
+<script>
+
+//states array declared at top
+//tax_rate array declared at top
+
+
+for (var i=0; i < 4; i++){
+document.write(states[i], ' - ' , tax_rate[i],'<br>')
+}
+</script>
+  <li>Use Javascript to dynamically load the list of states into the drop down menu. </li>
+<!-- script for this problem is written above in the table -->
+<li>Create a function called salesTaxLookup( ).</li>
+<!-- script for this problem is written above in the table -->
+  <li>Use the onchange event handler on the select element to run salesTaxLookup( )</li>
+<!-- script for this problem is written above in the table -->
+  <li>The function will use a lookup loop to find where the state is located in the states array. It can then get the corresponding tax rate from the stateSalesTax array.</li>
+<!-- script for this problem is written above in the table -->
+ <li>It will display the tax rate for the selected state.</li>
+<!-- script for this problem is written above in the table -->
+</ol>
+</body>
+</html>

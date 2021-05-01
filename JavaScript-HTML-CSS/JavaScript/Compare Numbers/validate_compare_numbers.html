@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript</title>
+<script src="compareNumbers.js"></script>
+<style>
+    .displayErr1,.displayErr2 {
+       color:red;
+       font-weight: 200;
+    }
+
+</style>
+</head>
+
+<body>
+<h2>WDV221 Intro Javascript</h2>
+<h3>Validate numbers</h3>
+
+<!-- Test Case/Plan (a group of tests using different inputs and their expected results)
+
+Input            Expected Result
+
+""                  err: "Input required"
+                    result = "Cannot process form"
+
+"     "            err:  "Input required"
+                    result = "Cannot process form"
+
+"  5   "            err:  "Invalid content required"
+                    result = "Cannot process form"
+
+/                   err: "Invalid content"
+                    result = "Cannot process form"
+
+\                  err:  "Invalid content"
+                    result = "Cannot process form"
+
+3/           err: "Invalid content"
+              result = "Cannot process form"
+
+Mar4         err: "Invalid content"
+               result = "Cannot process form"
+
+-5                  err: "Invalid content"
+                    result = "Cannot process form"
+
+"5 T"            err: "Invalid content"
+               result = "Cannot process form"
+
+0              err: ""
+               result = shows larger number
+
+3              err: ""
+               result = shows larger number 
+
+"This is Test of the input length"     "Limit 100 characters" -->
+
+<hr />
+<!-- This would be the most logical way. Valid with HTML first.  -->
+<h5>With HTML only</h5>
+<form id="form1" name="form1" method="post" action="">
+  <p>
+      Value 1:
+    <input type="number" name="value1" id="value1" value = 0 />
+  </p>
+  <p>
+    Value 2:
+    <input type="number" name="value2" id="value2" value = 0 />
+  </p>
+  <p>
+    Result:
+</p>
+    <span class="displayResult"></span>
+  <p>
+    <input type="button" value="Compare Numbers" onclick="compareNumbers()"  />
+  </p>
+  <p>
+    <input type="reset"  id="button" value="Reset" onclick = "resetForm()" />
+  </p>
+</form>
+
+<!-- OR  -->
+<h5>Validate by Javascript</h5>
+<form id="form2" name="form2" method="post" action="">
+  <p>
+      Value 1:
+    <input type="text" name="Jvalue1" id="Jvalue1" />
+     <span class="displayErr1"></span>
+  </p>
+  <p>
+    Value 2:
+    <input type="text" name="Jvalue2" id="Jvalue2"/>
+     <span class="displayErr2"></span>
+  </p>
+  <p>
+    Result:
+    <span class="JdisplayResult"></span>
+</p>
+
+  <p>
+    <input type="button" value="Compare Numbers" onclick="JcompareNumbers()"  />
+  </p>
+  <p>
+    <input type="reset"  id="button" value="Reset" onclick = "JresetForm()" />
+  </p>
+</form>
+
+</body>
+</html>

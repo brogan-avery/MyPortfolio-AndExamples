@@ -1,0 +1,3 @@
+customer goal 1
+customer goal 2
+customer goal 3

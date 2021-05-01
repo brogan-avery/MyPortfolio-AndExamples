@@ -1,0 +1,300 @@
+if (userInput == "1"){
+    system("open https://www.codechef.com/problems/TREEMX");
+}
+if (userInput == "2"){
+    system("open https://www.codechef.com/problems/DRGRAC");
+}
+if (userInput == "3"){
+    system("open https://www.codechef.com/problems/PROMLIV");
+}
+if (userInput == "4"){
+    system("open https://www.codechef.com/problems/SATY0000");
+}
+if (userInput == "5"){
+    system("open https://www.codechef.com/problems/MINPROD");
+}
+if (userInput == "6"){
+    system("open https://www.codechef.com/problems/BENDSP5");
+}
+if (userInput == "7"){
+    system("open https://www.codechef.com/problems/OCTOPUS");
+}
+if (userInput == "8"){
+    system("open https://www.codechef.com/problems/CLPS");
+}
+if (userInput == "9"){
+    system("open https://www.codechef.com/problems/BENDSPF4");
+}
+if (userInput == "10"){
+    system("open https://www.codechef.com/problems/BENDSPF7");
+}
+if (userInput == "11"){
+    system("open https://www.codechef.com/problems/BENDSPF5");
+}
+if (userInput == "12"){
+    system("open https://www.codechef.com/problems/MINIMAX2");
+}
+if (userInput == "13"){
+    system("open https://www.codechef.com/problems/UWCOI21G");
+}
+if (userInput == "14"){
+    system("open https://www.codechef.com/problems/MDIVSET");
+}
+if (userInput == "15"){
+    system("open https://www.codechef.com/problems/CCNF");
+}
+if (userInput == "16"){
+    system("open https://www.codechef.com/problems/ICM0010");
+}
+if (userInput == "17"){
+    system("open https://www.codechef.com/problems/STRPOW");
+}
+if (userInput == "18"){
+    system("open https://www.codechef.com/problems/SUMDIGIT");
+}
+if (userInput == "19"){
+    system("open https://www.codechef.com/problems/QUERGAME");
+}
+if (userInput == "20"){
+    system("open https://www.codechef.com/problems/HILLARR");
+}
+if (userInput == "21"){
+    system("open https://www.codechef.com/problems/HOTMEALS");
+}
+if (userInput == "22"){
+    system("open https://www.codechef.com/problems/PRIMECYC");
+}
+if (userInput == "23"){
+    system("open https://www.codechef.com/problems/MORPH21");
+}
+if (userInput == "24"){
+    system("open https://www.codechef.com/problems/UWCOI21E");
+}
+if (userInput == "25"){
+    system("open https://www.codechef.com/problems/ANTUTREE");
+}
+if (userInput == "26"){
+    system("open https://www.codechef.com/problems/ARCRT");
+}
+if (userInput == "27"){
+    system("open https://www.codechef.com/problems/PAIRFLIP");
+}
+if (userInput == "28"){
+    system("open https://www.codechef.com/problems/BINARYGA");
+}
+if (userInput == "29"){
+    system("open https://www.codechef.com/problems/ADDONSEG");
+}
+if (userInput == "30"){
+    system("open https://www.codechef.com/problems/CARPD");
+}
+if (userInput == "31"){
+    system("open https://www.codechef.com/problems/BASH");
+}
+if (userInput == "32"){
+    system("open https://www.codechef.com/problems/SUBPROB");
+}
+if (userInput == "33"){
+    system("open https://www.codechef.com/problems/SOLVEIT");
+}
+if (userInput == "34"){
+    system("open https://www.codechef.com/problems/MVCN2TST");
+}
+if (userInput == "35"){
+    system("open https://www.codechef.com/problems/GPHLBL");
+}
+if (userInput == "36"){
+    system("open https://www.codechef.com/problems/PERFSQRS");
+}
+if (userInput == "37"){
+    system("open https://www.codechef.com/problems/MEOW1234");
+}
+if (userInput == "38"){
+    system("open https://www.codechef.com/problems/PERMDIST");
+}
+if (userInput == "39"){
+    system("open https://www.codechef.com/problems/JMPFVR");
+}
+if (userInput == "40"){
+    system("open https://www.codechef.com/problems/SHENQ");
+}
+if (userInput == "41"){
+    system("open https://www.codechef.com/problems/RWALKS");
+}
+if (userInput == "42"){
+    system("open https://www.codechef.com/problems/JRNTREE");
+}
+if (userInput == "43"){
+    system("open https://www.codechef.com/problems/MATCUT");
+}
+if (userInput == "44"){
+    system("open https://www.codechef.com/problems/TREEWLK2");
+}
+if (userInput == "45"){
+    system("open https://www.codechef.com/problems/ELEPPOND");
+}
+if (userInput == "46"){
+    system("open https://www.codechef.com/problems/NINENINE");
+}
+if (userInput == "47"){
+    system("open https://www.codechef.com/problems/CLMTRO");
+}
+if (userInput == "48"){
+    system("open https://www.codechef.com/problems/CLTREE");
+}
+if (userInput == "49"){
+    system("open https://www.codechef.com/problems/CNVX4HUL");
+}
+if (userInput == "50"){
+    system("open https://www.codechef.com/problems/TFB2DW");
+}
+if (userInput == "51"){
+    system("open https://www.codechef.com/problems/OPTSPL");
+}
+if (userInput == "52"){
+    system("open https://www.codechef.com/problems/EDGY");
+}
+if (userInput == "53"){
+    system("open https://www.codechef.com/problems/WINHERE");
+}
+if (userInput == "54"){
+    system("open https://www.codechef.com/problems/ENETIRE");
+}
+if (userInput == "55"){
+    system("open https://www.codechef.com/problems/ADAPWN");
+}
+if (userInput == "56"){
+    system("open https://www.codechef.com/problems/DFNC");
+}
+if (userInput == "57"){
+    system("open https://www.codechef.com/problems/TWEGRA");
+}
+if (userInput == "58"){
+    system("open https://www.codechef.com/problems/SMTOUR");
+}
+if (userInput == "59"){
+    system("open https://www.codechef.com/problems/DCRTIT");
+}
+if (userInput == "60"){
+    system("open https://www.codechef.com/problems/COLPOLLY");
+}
+if (userInput == "61"){
+    system("open https://www.codechef.com/problems/COMPLEXG");
+}
+if (userInput == "62"){
+    system("open https://www.codechef.com/problems/UWCOI20G");
+}
+if (userInput == "63"){
+    system("open https://www.codechef.com/problems/RESTCH");
+}
+if (userInput == "64"){
+    system("open https://www.codechef.com/problems/CLMARKS");
+}
+if (userInput == "65"){
+    system("open https://www.codechef.com/problems/SPPSTR");
+}
+if (userInput == "66"){
+    system("open https://www.codechef.com/problems/CHEFPART");
+}
+if (userInput == "67"){
+    system("open https://www.codechef.com/problems/KGCD");
+}
+if (userInput == "68"){
+    system("open https://www.codechef.com/problems/RB2CNF");
+}
+if (userInput == "69"){
+    system("open https://www.codechef.com/problems/CIRCOLOR");
+}
+if (userInput == "70"){
+    system("open https://www.codechef.com/problems/LABEL");
+}
+if (userInput == "71"){
+    system("open https://www.codechef.com/problems/CIRCLEQ");
+}
+if (userInput == "72"){
+    system("open https://www.codechef.com/problems/CATCHSM");
+}
+if (userInput == "73"){
+    system("open https://www.codechef.com/problems/REFUELS");
+}
+if (userInput == "74"){
+    system("open https://www.codechef.com/problems/SHDWCMP");
+}
+if (userInput == "75"){
+    system("open https://www.codechef.com/problems/CLERVT");
+}
+if (userInput == "76"){
+    system("open https://www.codechef.com/problems/SUBWAY");
+}
+if (userInput == "77"){
+    system("open https://www.codechef.com/problems/GDIST");
+}
+if (userInput == "78"){
+    system("open https://www.codechef.com/problems/ALIENCOW");
+}
+if (userInput == "79"){
+    system("open https://www.codechef.com/problems/CIRCBIN");
+}
+if (userInput == "80"){
+    system("open https://www.codechef.com/problems/ADAROKS");
+}
+if (userInput == "81"){
+    system("open https://www.codechef.com/problems/XYPRESQ");
+}
+if (userInput == "82"){
+    system("open https://www.codechef.com/problems/PTREE");
+}
+if (userInput == "83"){
+    system("open https://www.codechef.com/problems/SWAPSIGN");
+}
+if (userInput == "84"){
+    system("open https://www.codechef.com/problems/GCDS");
+}
+if (userInput == "85"){
+    system("open https://www.codechef.com/problems/THCOM");
+}
+if (userInput == "86"){
+    system("open https://www.codechef.com/problems/BOFP");
+}
+if (userInput == "87"){
+    system("open https://www.codechef.com/problems/MGICMENU");
+}
+if (userInput == "88"){
+    system("open https://www.codechef.com/problems/EXUNF");
+}
+if (userInput == "89"){
+    system("open https://www.codechef.com/problems/BLWHTREE");
+}
+if (userInput == "90"){
+    system("open https://www.codechef.com/problems/SRVR");
+}
+if (userInput == "91"){
+    system("open https://www.codechef.com/problems/CUPACO");
+}
+if (userInput == "92"){
+    system("open https://www.codechef.com/problems/GRUMARS");
+}
+if (userInput == "93"){
+    system("open https://www.codechef.com/problems/CCDSAP");
+}
+if (userInput == "94"){
+    system("open https://www.codechef.com/problems/RECNDARY");
+}
+if (userInput == "95"){
+    system("open https://www.codechef.com/problems/COOLSBST");
+}
+if (userInput == "96"){
+    system("open https://www.codechef.com/problems/RNDRATIO");
+}
+if (userInput == "97"){
+    system("open https://www.codechef.com/problems/XORCOUNT");
+}
+if (userInput == "98"){
+    system("open https://www.codechef.com/problems/SAFETR");
+}
+if (userInput == "99"){
+    system("open https://www.codechef.com/problems/MINMXSTR");
+}
+if (userInput == "100"){
+    system("open https://www.codechef.com/problems/CHEFMOD");
+}

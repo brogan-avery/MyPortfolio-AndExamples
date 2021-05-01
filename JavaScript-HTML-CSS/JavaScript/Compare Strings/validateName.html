@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDV221 Intro Javascript</title>
+
+    <style>
+        .errMsg {
+            color:red;
+            font-weight: 200;
+        }
+
+    </style>
+
+    <script>
+
+        function processForm(){
+          let inputText = document.querySelector("#first_name").value;
+          if (validateName(inputText) == false){
+             if (inputText.trim() == ""){
+               message = "Input required";
+             }
+             else{
+               message = "Invalid content";
+             }
+
+            err = "Error: Not valid";
+
+          }
+          else{
+            err = "";
+            message = "Valid content";
+          }
+          document.querySelector(".errMsg").innerHTML = err;
+          document.querySelector(".displayMsg").innerHTML = message;
+
+        }
+
+        function validateName(inputText) {
+          isValid = true;
+            var alphaCount = 0;
+            var invalidCharCount = 0;
+            if(inputText.length > 100){
+                isValid = false;
+             }
+             for (var i = 0; i < inputText.length; i++) {
+               if (inputText.charAt(i).match(/[A-Za-z]/)){
+                    alphaCount++;
+               }
+                if (inputText.charAt(i).match("/")){
+                    invalidCharCount++;
+             }
+                if (inputText.charAt(i).match(/\\/)){
+                    invalidCharCount++;
+             }
+             if (inputText.charAt(i).match(/'/)){
+                 invalidCharCount++;
+          }
+          if (inputText.charAt(i).match(/"/)){
+              invalidCharCount++;
+       }
+           }
+             if(alphaCount == 0 ){
+               isValid = false;
+             }
+             if(invalidCharCount > 0){
+               isValid = false;
+             }
+             return isValid
+        }
+
+        function resetForm() {
+          document.querySelector(".displayMsg").innerHTML = "";
+          document.querySelector(".errMsg").innerHTML = "";
+        }
+
+
+    </script>
+</head>
+<body>
+    <h1>WDV221 Intro to Javascript</h1>
+    <h2>UNIT-8 Testing and Validation</h2>
+    <h3>Testing the validateName( )</h3>
+
+    <form method="POST" action="#">
+        <p>
+            <label for="first_name">First Name:
+                <input name="first_name" id="first_name" type="text" >
+                <span class="errMsg" id="first_name_err"></span>
+            </label>
+        </p>
+
+        <p>
+            <label for="displayMsg">Validation Message:
+                <span class = "displayMsg"></span>
+            </label>
+        </p>
+
+        <p>
+            <input type="button" value="Process Form" onclick="processForm()" >
+        </p>
+        <p>
+            <input type="reset" value="Try Again!" onclick="resetForm()">
+        </p>
+    </form>
+</body>
+</html>

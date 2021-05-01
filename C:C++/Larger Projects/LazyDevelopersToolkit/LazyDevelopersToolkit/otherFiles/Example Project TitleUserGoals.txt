@@ -1,0 +1,4 @@
+user of site will be able to buy tool
+user of site will be able to look up their own info
+user of site will be able to log in
+user of site will be able to contact store

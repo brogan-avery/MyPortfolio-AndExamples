@@ -1,0 +1,5 @@
+Aug 1 - worked on testing
+Aug 5 - built a UI
+Aug 6 - created a student class
+Aug 10 - did research on XYZ
+Aug 12 - created a power point

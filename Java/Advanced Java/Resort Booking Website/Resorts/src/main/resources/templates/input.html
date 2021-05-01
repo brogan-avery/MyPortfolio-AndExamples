@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add New Resort Location</title>
+</head>
+<body>
+
+
+
+<form th:object="${newLocation}" th:action="@{/update/{id}(id=${newLocation.id})}" method=POST>
+	Resort Location (area code): <input name="location" size="20" th:field="*{location}"><br />
+	Phone Number: <input name="phone" size="20" th:field="*{phone}"><br />
+	Price for 1 adult for 1 week: <input name="price" size="20" th:field="*{price}"><br />
+	Pets allowed: <input name="pets" size="20" th:field="*{pets}"><br />
+	Excursion activity<input name="excursion.activity" size="20" th:field="*{excursion.activity}"><br />
+	Length of activity:<input name="excursion.hours" size="20" th:field="*{excursion.hours}"><br />
+	Difficulty level of activity <input name="excursion.level" size="20" th:field="*{excursion.level}"><br />
+	<input name="submit" type="submit" value="submit" />
+</form>
+<a href="viewAll">View all Locations</a>
+
+
+
+</body>
+</html>

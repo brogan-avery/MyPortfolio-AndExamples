@@ -1,0 +1,208 @@
+@font-face {
+    font-family: '1942_report1942_report';
+    src: url('fonts/1942-webfont.eot');
+    src: url('fonts/1942-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/1942-webfont.woff2') format('woff2'),
+         url('fonts/1942-webfont.woff') format('woff'),
+         url('fonts/1942-webfont.ttf') format('truetype'),
+         url('fonts/1942-webfont.svg#1942_report1942_report') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*Element*/
+body {
+  background-color:tan;
+  font-family: verdana, arial, sans-serif;
+  }
+
+/*Group*/
+  #ref a, h6{
+    color: navy;
+  }
+
+/*Element*/
+  h1{
+    font-family: 'Courgette', cursive;
+    font-weight: bold;
+    font-variant: small-caps;
+    text-align: center;
+    font-size: 55px;
+    color: rgb(63, 51, 49);
+    background-color: rgb(180, 146, 121);
+    text-shadow: rgba(40, 32, 32, 0.53) -2px 10px 5px;
+    }
+
+/*Element*/
+h2{
+    font-family: Tillana, cursive;
+    font-weight: bold;
+    font-variant: small-caps;
+    text-align: center;
+    font-size: 40px;
+    color: rgb(143, 95, 50);
+    background-color: rgba(180, 146, 121, 0.01);
+
+}
+
+/*Element*/
+h3 {
+
+    font-family: Tillana, cursive;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    color: rgb(143, 95, 50);
+    background-color: rgba(180, 146, 121, 0.01);
+}
+
+/*Element*/
+h4{
+  font-family: Tillana, cursive;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    color:rgb(63, 51, 49);
+    background-color: rgba(180, 146, 121, 0.01);
+}
+
+/*Element*/
+p{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 16px;
+    color: rgb(106, 70, 37);
+    background-color: rgba(180, 146, 121, 0.01);
+}
+
+/*Element*/
+li{
+    font-family: "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 18px;
+    color: teal;
+    text-shadow: rgb(0, 0, 0) 1px 1px 2px;
+}
+
+/*Element*/
+a{
+  text-decoration: none;
+  color: indigo;
+}
+
+/*Decendant*/
+a img {
+  display:none;
+}
+
+/*Pseudo*/
+ a:hover img {
+   display:block;
+   text-align: : center;
+   margin-left: 450px;
+ }
+
+/*Independent*/
+.topnav{
+  background-color: saddlebrown;
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/*Decendant*/
+.topnav a{
+  text-align: center;
+  padding: 20px;
+  color: rosybrown;
+}
+
+/*Pseudo*/
+.topnav a:hover{
+  color: rgb(123, 0, 255);
+  background-color: rgb(227, 231, 171);
+}
+
+/*Decendant*/
+#p4 a {
+    font-family: Amiko, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+    color: rgb(168, 31, 145);
+    background-color: rgba(54, 38, 38, 0.02);
+}
+
+/*Element*/
+h6{
+  text-align: center;
+  font-size: 12px;
+  padding-top: 100px;
+  font-family: '1942_report1942_report';
+}
+
+
+#ref{
+  text-align: left;
+  color: navy;
+  font-size: 10px;
+  padding-left: 400px;
+}
+
+/*Decendant*/
+#p3 a{
+  color: springgreen;
+}
+/*Dependant*/
+p.clickhere{
+  color: green;
+}
+
+img{
+  border: 4px solid black;
+  padding:4px;
+
+}
+.noborder{
+  border: none;
+  display: block;
+align-items: center;
+    margin-left: auto;
+    margin-right: auto
+}
+.shavings{
+  border: none;
+}
+
+
+.clear{
+  clear: both;
+}
+.floatr{
+  vertical-align: middle;
+  float: right;
+  width: 300px;
+  clear:both;
+}
+
+.form{
+  margin: auto;
+  width: 95%;
+}
+
+fieldset{
+  background-color: rgb(251, 218, 207);
+  border: 3px dashed rgb(83, 60, 52);
+}
+
+fieldset h2{
+  font-family: serif;
+  color: rgb(83, 60, 52);
+}
+
+.rasp{
+
+  border: none;
+  float: right;
+  width: 30%
+}

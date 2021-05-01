@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript - Loops</title>
+</head>
+
+<body>
+
+<h3>Instructions: </h3>
+<p>1. Create a WHILE loop that will print out the  numbers 0 to 4 each on a seperate line.</p>
+  <script>
+      var count = -1
+      while (count < 4){
+          document.write(count = count + 1 , "<br>")
+      }
+  </script>
+<p>2. Create a FOR loop that will print out the  numbers 4 to 0 each on a seperate line.</p>
+<script>
+
+    for (let i = 0; i < 5; i++) {
+        document.write(i, "<br>")
+      }
+</script>
+<p>3. Create a loop that will print 1 to 5 each in its own paragraph element.</p>
+<script>
+    for (let i = 1; i < 6; i++) {
+        document.write("<p>",i, "</p>")
+      }
+</script>
+
+<p>4. Create a loop that will print out the following numbers (5,10,15,20,25...) until one is greater than 40.</p>
+<script>
+    for (let i = 5; i < 41; i+=5) {
+        document.write(i, "<br>")
+      }
+
+</script>
+<p>5. Create a loop that will print out  6 of the following messages (Option 1, Option 2, Option 3, etc. ) as options within the drop down menu below.</p>
+<p>
+ <label>Select an Option!
+   <select name="select" id="select">
+<script>
+var option_number = 0
+for (var i=1; i <=6; i++)
+{
+	option_number++;
+	document.write("<option>" + 'option' + option_number + "</option>");
+}
+</script>
+</select>
+</label>
+</p>
+<p>&nbsp;</p>
+</body>
+</html>

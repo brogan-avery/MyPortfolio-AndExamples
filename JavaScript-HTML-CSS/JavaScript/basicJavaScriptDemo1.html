@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript - Variables and Data Types Assignment</title>
+
+<style>
+
+body {background-color:#FC6;
+}
+
+.highlightTitle	{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-style:italic;
+	font-size:14px;
+	text-decoration:underline;
+	color:#096;
+}
+
+
+</style>
+</head>
+
+<body>
+<h2>WDV221 Intro Javascript</h2>
+<h3>Unit-2 - Variables Assignment</h3>
+<hr />
+<p>Please complete the following exercises on this page. When complete post this page to your  server. Make a link in your WDV221 homework  page for this assignment.</p>
+<p>Submt this assignment on Blackboard. Please include a link to your homework page.</p>
+<h3>For each exercise use a comment line to put the Exercise number within the script. Also place a short description of what the script is doing.</h3>
+<hr />
+
+
+<p>1. Define a String variable called schoolName and assign it a value of DMACC.</p>
+<script>
+//Q1, declaring a string data type variable and setting a value for it
+let schoolName = "DMACC";
+</script>
+
+<p>2. Define a String variable called courseName and assign it a value of WDV221 Intro Javascript</p>
+<script>
+//Q2, declaring a string data type variable and setting a value for it
+let courseName = "WDV221 Intro Javascript";
+</script>
+
+<p>3. Define a Numeric variable called testScore and assign it a value of 100.00. </p>
+<script>
+//Q3, declaring a numeric or interger data type variable and setting a value for it
+let testScore = 100.00;
+</script>
+
+<p>4. Define a Numeric variable called courseGrade. Do not give it a value.</p>
+<script>
+//Q4, declaring a numeric or interger data type variable but leaving the value unassigned
+let courseGrade;
+</script>
+
+<p>5. Define a Boolean variable called courseCompleted. Give it a value of false.</p>
+<script>
+//Q5, declaring a boolean data type variable and assigning false
+let courseCompleted= false;
+</script>
+
+<p>6. Display the value of all the variables in their own paragraphs below. </p>
+<div style="font-weight:bold;">
+<script>
+//Q6, simply printing out the values assigned to each variable decalred in this file so they are readable on a webpage
+document.write("<p>" + schoolName + "</p>"+"<p>" + courseName + "</p>" +"<p>" + testScore + "</p>" +"<p>" + courseGrade + "</p>" +"<p>" + courseCompleted + "</p>");
+</script>
+</div>
+
+<p>7. Display the number of characters in the course name.</p>
+<div style="font-weight:bold;">
+<script>
+//Q7, using the document.write function to display the answer of another fucntion which gives the length of a string in the form of a number
+document.write(courseName + ": " + courseName.length);
+</script>
+</div>
+
+<p>8. Display the course name as all uppercase letters.</p>
+<div style="font-weight:bold;">
+<script>
+//Q8,using a build in function to display a variable value in caps on the webpage
+document.write(courseName.toUpperCase());
+</script>
+</div>
+<p>9.Using the String Object determine if the course name contains the letters WDV?  Look at the String methods. Does one or more of them look inside the variable for specific content?</p>
+<div style="font-weight:bold;">
+<script>
+//Q9, calling a method include that looks through the string courseName and checks for substring that is in (), prints true if yes, false if not
+document.write(courseName.includes("WDV"));
+</script>
+</div>
+
+</body>
+</html>

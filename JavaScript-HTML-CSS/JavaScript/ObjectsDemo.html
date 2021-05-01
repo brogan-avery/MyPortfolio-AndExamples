@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript - Arrays</title>
+<script>
+function studentDiscountPrice() {
+	discountedPrice = this.price *0.8;
+	return discountedPrice.toFixed(2);
+}
+
+function formatInfo(){
+	return "Title: " + this.title + "<br> Author: " + this.author + "<br> Price: $" + this.price + "<br> Student Price: $" + this.studentDiscountPrice();
+}
+
+let book1 = {}
+let book2 = {}
+let book3 = {}
+let javascriptBooks = [book1,book2,book3]
+let bookTitles = ["Beginning Javascript", "Logic with ES6", "Javascript Ojbects Made Easy"];
+let bookPrices = [19.99, 29.49, 999.99];
+let bookAuthors = ["Smith", "Johson-Parker", "Westin" ];
+</script>
+</head>
+
+<body>
+
+<h3>Javascript Object Assignment</h3>
+
+<script>
+		for(let i=0; i<javascriptBooks.length; i++){
+			javascriptBooks[i].title = bookTitles[i];
+			javascriptBooks[i].price = bookPrices[i];
+			javascriptBooks[i].author = bookAuthors[i];
+			javascriptBooks[i].studentDiscountPrice = studentDiscountPrice;
+			javascriptBooks[i].formatInfo = formatInfo;
+}
+</script>
+
+
+<script>
+document.write("<p style = 'font-weight:bold'> book1 </p>");
+document.write(book1.formatInfo());
+
+document.write("<p style = 'font-weight:bold'> book2 </p>");
+document.write(book2.formatInfo());
+
+document.write("<p style = 'font-weight:bold'> book3 </p>");
+document.write(book3.formatInfo());
+
+document.write("<p style = 'font-weight:bold'> From book array</p>");
+for(let i=0; i<javascriptBooks.length; i++){
+	document.write("book" +(i+1) + "<br><br>" + javascriptBooks[i].formatInfo() + "<br><br>");
+}
+
+</script>
+</body>
+</html>

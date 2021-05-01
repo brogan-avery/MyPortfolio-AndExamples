@@ -1,0 +1,14 @@
+WHILE userInput is not “  5  “
+	GET userInput from user
+
+	IF userInput = “ 1 “
+		// calls method that gives the user an option to pick from several relaxing songs. Then uses the ‘command line system() function(s)’ to make that song’s wav/mp3 file play. Still need to figure out a way to allowed user to make it stop however…..
+	IF userInput = “ 2 “
+		// STILL UNDECIDED: but will most likely be a very small quiz game, or could be based of games I have created in based projects or I may base something on a small game I find online
+	IF userInput = “ 3 “
+		// Calls methods that read in each line of a text file with jokes and responses. It then selects a random joke and reads it out loud using the text to speech functionality of the base DevTool class. It pauses before reading the answer to the joke.
+	IF userInput = “ 4 “
+		// calls method that gives the user an option to pick from several different websites that just contain images of cute baby animals. This is done using the ‘command line system() function(s)’, and will open a weblink in the users browser automatically
+	IF userInput = “ 5 “
+		// exits loops and returns to the main functions/ main program menu
+

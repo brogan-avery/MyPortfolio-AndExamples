@@ -1,0 +1,14 @@
+View Controller
+    Functions as the UI
+Main
+    Controls main logic
+Account Class
+     This class lets the customer manage and view his finances
+Shopper Class
+     This class lets the customer manage and view information about shoppers
+Metrics Class
+     This class stores and manages details about the websites traffic and usage
+ABC Class
+	Amet aliquam id diam maecenas ultricies mi eget mauris.
+XYZ Class
+     n fermentum et sollicitudin ac orci.

@@ -1,0 +1,233 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <style>
+        body{
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 1%;
+        }
+
+        header{
+            background-color: dodgerblue;
+            padding: 2%;
+        }
+        .centered_text{
+            text-align: center;
+        }
+
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .section_header{
+            background-color: darkturquoise;
+             padding: 2%;
+        }
+
+        .form_object{
+            padding-right: 3%;
+        }
+
+        nav{
+            height: 40px;
+            margin-bottom: 8px;
+        }
+
+    </style>
+
+    <script>
+        var actionsInPlan = [];
+
+        // stores the name of the plan in the browser (I think...?) until the form is actually submitted
+        function creatNewTitle() {
+            var title = document.getElementById("title").value;
+            document.getElementById("titleInForm").value = title;
+            document.getElementById("title").value = "";
+            document.getElementById("new_plan_title_display").innerHTML = title;
+        }
+
+        {# creates a new javascript object out of the action, reps, and time selected from form and then adds that new object to a global js array. that Array then gets entered into the hidden form and on submit will be sent to the python view file where it will be procesed and broke apart so that each js object will be added in as a new row in the database#}
+{#      {# Doing it this way helps to keep more of the ??processing/memory?? on the client side. it does not add an entry to the plans table every time the user clicks the button "add to plan" in step 2 of the new plan creation. Instead of creating an object in python for the table, it creates a JS object. This way,the list is sent as one object just once through the hidden form upon the acual submission. This not only makes the UI smoother and gives the illusions of form submissions, but it makes it run a lot faster compared to some of the form features I created first in the diet app/ webpage   #}
+        function addActionToPlan() {
+            var action = document.getElementById("actions_drop_down").value;
+            var reps = document.getElementById("reps").value;
+            var time = document.getElementById("time").value;
+            var actionObject = {action : action, reps : reps, time : time };
+
+            actionsInPlan.push(actionObject)
+
+            var txtForProcessing = ""; {# best format to send to python view file #}
+            for (var i = 0; i < actionsInPlan.length; i++){
+                txtForProcessing = txtForProcessing + actionsInPlan[i].action + " " + actionsInPlan[i].reps + " " + actionsInPlan[i].time + " ";
+            }
+            document.getElementById("objArray").value = txtForProcessing; {# puts the array of objects into the hidden form #}
+
+            var the_table = document.getElementById("the_table");
+            var rowCount = the_table.rows.length;
+            for (var i = rowCount - 1; i > 0; i--) {
+                the_table.deleteRow(i);
+            }
+
+            var tblBody = document.getElementsByTagName("tbody")[0];
+
+            for (var i = 0; i < actionsInPlan.length; i++) {
+            var row = document.createElement("tr"); // creates a table row
+              var cell1 = document.createElement("td"); // Create a <td> element
+              var cell2 = document.createElement("td"); // Create a <td> element
+              var cell3 = document.createElement("td"); // Create a <td> element
+              var cellText1 = document.createTextNode(actionsInPlan[i].action); // Create a text node
+              var cellText2 = document.createTextNode(actionsInPlan[i].reps); // Create a text node
+              var cellText3 = document.createTextNode(actionsInPlan[i].time); // Create a text node
+
+              cell1.appendChild(cellText1); // append text to cell
+              row.appendChild(cell1); // append cell to row
+              cell2.appendChild(cellText2); // append text to cell
+              row.appendChild(cell2); // append cell to row
+              cell3.appendChild(cellText3); // append text to cell
+              row.appendChild(cell3); // append cell to row
+            tblBody.appendChild(row); //append row to tbody
+          }
+        }
+
+    </script>
+</head>
+<body>
+
+{# Nav bar#}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="http://localhost:8000/health">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All Applications
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="http://localhost:8000/diet">Calorie Tracker</a>
+            <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="http://localhost:8000/exercise">Work out Planner</a>
+            <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Meal Planner</a>
+            <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Virtual Doctor</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{# Header #}
+<header>
+    <h1 class="centered_text"> Work Out Planner </h1>
+</header>
+<hr>
+
+{# choose plan #}
+<div class="start_workout">
+    <h3 class="centered_text section_header"> Choose a plan and start working out </h3>
+
+    <form action="displayPlan" id="planSelectionForm" method="get" class="centered_text">
+        {% csrf_token %}
+        <select name="plans_drop_down" id="plans_drop_down">
+                {% for plan in listOfPlans %}
+                    <option value={{ plan }}>{{ plan }}</option>
+                {% endfor %}
+            </select>
+
+    <button onclick="document.getElementById('planSelectionForm').submit()" {#  href="displayPlan" #}> View selected plan </button><br>
+    </form>
+</div>{# END of coose plan section #}
+<hr>
+
+{# create new plan#}
+<div class="create_new">
+    <h3 class="centered_text section_header"> Create a new workout plan </h3>
+
+    <section id="step1">
+        <h5>Step 1:</h5>
+
+        <p> Enter title for the new plan </p>
+        <div class="mini_form centered_text">
+            <input type="text" id="title" name="title">
+            <br><br>
+            <button type="button" onclick="creatNewTitle()">Add Title</button>
+        </div>
+    </section>
+
+    <hr>
+    <section id="step2">
+        <h5>Step 2:</h5>
+        <p> Select the activities to add to plan </p>
+{#        <p style="font-size: 14px">NOTE: this plan will not be created and saved until you hit the create plan button bellow </p>#}
+
+        <form action="" method="post">
+                {% csrf_token %}
+                <span class="form_object">
+                    <select name="actions_drop_down" id="actions_drop_down">
+                        {% for row in actions %}
+                            <option value={{ row.action }}>{{ row.action }}</option>
+                        {% endfor %}
+                    </select>
+                </span>
+
+                <span class="form_object">
+                    <input type="number" id="reps" name="reps" min="0" max="60" value="0"> Reps
+                </span>
+
+                <span class="form_object">
+                    <input type="number" id="time" name="time" min="0" max="90" value="0"> Minutes
+                </span>
+
+                <button type="button" onclick="addActionToPlan()">Add to Plan</button>
+        </form>
+    </section>
+
+    <hr>
+    <section id="step3">
+        <h5>Step 3:</h5>
+        <p> Review your new plan before creation</p>
+        {# this is the form that actully connects to the view page. Makes it so that the plan name/title only has to be entered once and multiple actions can be added at one time   #}
+        <form method="post">
+            {% csrf_token %}
+            <div hidden>
+                <input type="text" id="titleInForm" name="titleInForm">
+                <input type="text" id="objArray" name="objArray">
+            </div><br>
+            <h5 class="centered_text"> Currently On <span id="new_plan_title_display">New Plan </span>  </h5>
+            <table class="table" id="the_table">
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>Reps</th>
+                        <th>Length(min)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="centered_text">
+                <input type="submit" value="Create Plan">
+            </div>
+        </form>
+    </section>
+</div>{# end create new plan section#}
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

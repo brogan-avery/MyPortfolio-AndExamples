@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>WDV221 Intro Javascript</title>
+  <style>
+      .displayErr1,.displayErr2 {
+          color:red;
+          font-weight: 200;
+      }
+
+  </style>
+  <script src="compareNames.js"></script>
+</head>
+<!-- Test Plan
+
+Input               Expected Result
+
+""                  err: "Input required"
+                    message = "Cannot process invalid input"
+
+"     "             err: "Input required"
+                    message = "Cannot process invalid input"
+
+/                   err: "Invalid content"
+                    message = "Cannot process invalid input"
+
+\                   err: "Invalid content"
+                    message = "Cannot process invalid input"
+
+Mark/                err: "Invalid content"
+                    message = "Cannot process invalid input"
+
+Mary's               err: "Invalid content"
+                    message = "Cannot process invalid input"
+
+5                  err: "Invalid content"
+                    message = "Cannot process invalid input"
+
+"Target"          err: ""
+                  message = "same" or "different"
+
+"5 T"            err: ""
+                 message = "same" or "different"
+
+"This is Test of the input length"     "Limit 100 characters" -->
+<body>
+<h2> WDV221 Intro Javascript </h2>
+NAME VALIDATION
+<hr />
+
+<form id="form1" name="form1" method="post" action="">
+  <p>
+Name 1:
+    <input type="text" name="value1" id="value1" class="value1"/>
+    <span class="displayErr1"></span>
+  </p>
+  <p>
+Name 2:
+    <input type="text" name="value2" id="value2" class="value2" />
+    <span class="displayErr2"></span>
+  </p>
+
+  <p> Result:  <span class="displayMsg"></span> </p>
+
+
+  <p>
+    <input type="button" value="Compare Names" onclick="compareNames()" />
+  </p>
+  <p>
+    <input type="reset" name="Reset" id="button" value="Reset" onclick="restart()" />
+  </p>
+
+</form>
+</body>
+</html>

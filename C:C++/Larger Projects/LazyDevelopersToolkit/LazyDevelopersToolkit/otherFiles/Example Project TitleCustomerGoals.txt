@@ -1,0 +1,5 @@
+the customer wants a website for his tool store
+the website must be able to help his customers/ shoppers do XYZ
+the customer states that his budget is 4000
+customer does not want the color red on any webpage
+must have a way to look at the analytics for the website and monitor sales and shopping 

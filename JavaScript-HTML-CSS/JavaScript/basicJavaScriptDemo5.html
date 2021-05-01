@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript - Skill Test Form Calculations</title>
+<script src="dateFunctions.js"></script>
+<script>
+	function processOrder() {
+		let inProductName = document.querySelector("#item_name").value;
+		let inPrice = document.querySelector("#item_price").value;
+		let inQuantity = document.querySelector("#item_quantity").value;
+
+		if(  isNaN(parseFloat(inPrice))  ||  isNaN(parseFloat(inQuantity))  )
+		{
+			alert("Bad input!");
+
+		}
+		else {
+			let salePrice = inPrice * inQuantity;
+			formatedPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(salePrice);
+			document.querySelector(".outsalePrice").innerHTML = formatedPrice;
+			document.querySelector(".outTotalSales").innerHTML = formatedPrice;
+			//let orderLine = inProductName + "  " + formattedSalePrice + "<br>";
+			//document.querySelector(".outDisplayOrder").innerHTML += orderLine;
+
+	}
+}
+
+	function clearSale() {
+		document.querySelector(".outSalePrice").innerHTML = "";
+		document.querySelector(".outTotalSales").innerHTML = "";
+	}
+
+	function clearOrder() {
+		document.querySelector(".outSalePrice").innerHTML = "";
+		document.querySelector(".outTotalSales").innerHTML = "";
+		document.querySelector(".displayOrder").innerHTML = "";
+
+	}
+</script>
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Skill Test - Fix Form</h2>
+<form id="form1" name="form1" method="post" action="">
+  <table width="452">
+     <tr>
+      <td width="168">Item Name:</td>
+      <td width="272"><input type="text" name="textfield" id="item_name" /></td>
+    </tr>
+    <tr>
+      <td>Item Price:</td>
+      <td><input type="text" name="textfield2" id="item_price" /></td>
+    </tr>
+    <tr>
+      <td>Number Purchased:</td>
+      <td><input type="text" name="textfield3" id="item_quantity" /></td>
+    </tr>
+    <tr>
+      <td>Sale Price: </td>
+      <td><span class="outSalePrice"></span></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Total Sales: </td>
+      <td><span class="outTotalSales"></span></td>
+    </tr>
+  </table>
+  <p>
+    <input type="button" name="button" id="button" value="Submit Order" onclick="processOrder()"/>
+    <input type="reset" name="button2" id="button2" value="Clear Sale" onclick="clearSale()" />
+    <input type="button" name="button3" id="button3" value="Clear Order" onclick="clearOrder()" />
+  </p>
+</form>
+<h2>Javascript Supplies - Invoice</h2>
+<p class="displayOrder"></p>
+
+
+</body>
+</html>

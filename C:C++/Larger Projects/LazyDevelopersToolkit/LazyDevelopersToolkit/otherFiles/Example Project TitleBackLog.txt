@@ -1,0 +1,5 @@
+Test the view of project
+add front end user interface to project
+fix the errors on line 499
+figure out a way to implement XYZ
+Get with CEO to go over ABC

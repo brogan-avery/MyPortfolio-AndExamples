@@ -1,0 +1,28 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+header{
+  display: block;
+  margin: auto;
+  background-color: lightblue;
+}
+
+h1,h2{
+  text-align: center;
+}
+img{
+  display: block;
+  margin: auto;
+}
+
+
+main{
+
+  margin: 4%;
+}
+
+footer{
+  background-color: lightblue;
+}

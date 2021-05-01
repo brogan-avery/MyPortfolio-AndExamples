@@ -1,0 +1,18 @@
+____+____+____+_____
+Game rules and instructions:
+When you enter the game, you will use these commands. 
+The goal of this game is to get your pet to die from old age.
+Key commands:
+f – feed pet food
+d – feed discount pet food
+s – scavenge for food
+m – give medicine 
+x – give magic potion
+h – give home remedy 
+p – play
+e – pet
+t – give toy
+z – earn income through pet show
+n - make pet noise
+
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href = "cocoa_layout.css" rel = "stylesheet" type = "text/css"/>
+
+
+<title> cocoa project recipe </title>
+  <meta name = "discription" content = "Sally's Skinny Sweet Shop">
+  <meta name = "keywords" content = "healthy chocolate, environmently friendly chocolate,cocoa">
+  <meta name = "author" content= "Brogan Avery Oct 23 2019">
+</head>
+
+
+
+<body>
+<h1> Sallly's Skinny Sweet Shop</h1>
+      <div class = "topnav">
+        <a class = "active" href = "Index.html"> Home </a>
+        <a href = "handb.html"> History and Health </a>
+        <a href = "ourprocess.html"> Our Process </a>
+        <a href = "moreinfo.html"> Learn More </a>
+        <a href = "recipe.html"> Share your Recipes </a>
+      </div>
+<br>
+<div class="form">
+
+<form id = "recipes" name = "recipes"  method = "post" action = "recipe.php">
+    <fieldset class = "labelfloatleft">
+      <legend><h2>Let us know how you use our products!</h2></legend>
+
+      <label for = "name">Leave you name:</label>
+      <input type = "text" name = "firstname" id = "firstname" class = "text" />
+<br><br>
+      <label for = "location">Tell us where you are from:</label>
+      <input type = "text" name = "location" id = "location" class = "text" value="City, State"/>
+<br><br>
+      <label for = "emailaddress">Your email address:</label>
+      <input type = "email" name = "emailaddress" id = "emailaddress">
+<br><br>
+      <label for="dropdown">what kind of recipe is it:</label>
+        <select name="dropdown">
+          <option value="">Breakfast </option>
+          <option value="saab">Brunch </option>
+          <option value="fiat">Healthy</option>
+          <option value="audi">Dessert</option>
+          <option value="">Snack</option>
+          <option value="saab">Appetizer</option>
+          <option value="fiat">Side dish</option>
+          <option value="audi">Christmas</option>
+          <option value="audi">Other</option>
+        </select>
+
+<br><br>
+
+      <lable for = "message">Your recipe:</lable> <br>
+      <textarea name="message" rows="10" cols="90"> </textarea>
+
+<br><br>
+        <lable for = "yes/no"> Would you like your recipe to remain anonymous?</lable>
+        <input type="radio" name="yes" value="yes"> Yes<br>
+        <input type="radio" name="no" value="no"> No<br>
+
+
+<input type="submit" value="Submit">
+<input type="reset" value="Reset Form">
+
+<img src="images/rasp.png" name=rasp alt="rasp" class="rasp">
+    </fieldset>
+
+
+</div>
+
+</body>
+</html>
