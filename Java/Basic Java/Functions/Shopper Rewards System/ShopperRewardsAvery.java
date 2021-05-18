@@ -1,4 +1,9 @@
-//Brogan Avery
+
+/**************************************************************
+* Title: Shopper Rewards
+* Author: Brogan Avery
+* Created: 2019 
+***************************************************************/
 import java.text.DecimalFormat;
 import java.util.Scanner;
 public class ShopperRewardsAvery {
