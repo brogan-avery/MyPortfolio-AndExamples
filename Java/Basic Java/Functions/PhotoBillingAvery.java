@@ -4,7 +4,6 @@
 * Created: 2019
 * Description: calculates the final price of orders based on different cases  
 ***************************************************************/
-//Brogan Avery
 
 import java.util.Scanner;
 
