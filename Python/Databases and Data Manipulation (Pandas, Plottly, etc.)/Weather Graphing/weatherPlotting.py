@@ -47,7 +47,7 @@ if __name__ == '__main__':
     plot(x,y)
     show()
 
-# these are ok on their own but cannot be compared since they are backwards (12 - 1 and 1 - 12) and one is in C and the other is in F. And with no lables its not super clear
+# these are ok on their own but cannot be compared since they are backwards (12 - 1 and 1 - 12) and one is in C and the other is in F. And with no labels its not super clear
 
 # more complex charts  :
 

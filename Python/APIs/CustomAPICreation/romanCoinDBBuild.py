@@ -39,7 +39,7 @@ def add_record(conn,newRow):
 #————————————————————————————————————————————————————————————————————————————————————
 if __name__ == '__main__':
 
-    # declare table(s)
+# declare table(s)
     createCoinTable = """ CREATE TABLE IF NOT EXISTS Coins (
                                                 CoinId text,
                                                 Deity text,
